@@ -1,14 +1,14 @@
 package com.example.java.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/main9")
-public class Cintroller09 {
+@RequestMapping("main22")
+public class Controller22 {
+    @GetMapping("sub1")
+    public void sub1() {
 
-    @RequestMapping("sub1")
-    public String sub1() {
-        return null;
     }
 }
