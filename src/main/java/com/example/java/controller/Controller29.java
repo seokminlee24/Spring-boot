@@ -1,5 +1,6 @@
 package com.example.java.controller;
 
+import com.example.java.dto.c29.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -131,11 +132,7 @@ public class Controller29 {
     }
 
     @PostMapping("sub8")
-    public String sub8(String isbn,
-                       String title,
-                       String author,
-                       Integer price,
-                       LocalDate publishing,
+    public String sub8(Book book,
                        RedirectAttributes rttr) throws SQLException {
         String sql = """
                 INSERT INTO db1.book
@@ -146,11 +143,11 @@ public class Controller29 {
         Connection con = dataSource.getConnection();
         PreparedStatement ps = con.prepareStatement(sql);
         try (con; ps) {
-            ps.setString(1, isbn);
-            ps.setString(2, title);
-            ps.setString(3, author);
-            ps.setInt(4, price);
-            ps.setDate(5, Date.valueOf(publishing));
+            ps.setString(1, book.getIsbn());
+            ps.setString(2, book.getTitle());
+            ps.setString(3, book.getAuthor());
+            ps.setInt(4, book.getPrice());
+            ps.setDate(5, Date.valueOf(book.getPublishing()));
             int count = ps.executeUpdate();
             if (count == 1) {
                 rttr.addFlashAttribute("message", "새 책이 입력되없습니다.");
