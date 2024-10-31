@@ -5,6 +5,8 @@ CREATE TABLE my_table58
     money INT
 );
 
+DROP TABLE my_table58;
+
 INSERT INTO my_table58
 VALUES ('kim', 10000),
        ('lee', 10000);

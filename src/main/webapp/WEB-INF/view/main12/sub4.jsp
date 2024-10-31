@@ -48,6 +48,7 @@
         <td>${productList[0].price}원</td>
         <td>${productList[0].quantity}개</td>
         <td>${productList[0].price * productList[0].quantity}원</td>
+        <%--        eq 는 ==--%>
         <td>${productList[0].quantity eq 0 ? "재고없음" : ""}</td>
     </tr>
     <tr>

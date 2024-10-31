@@ -82,6 +82,8 @@ SELECT COUNT(OrderID)
 FROM Orders;
 SELECT COUNT(EmployeeID)
 FROM Employees;
+SELECT COUNT(EmployeeID)
+FROM Employees;
 SELECT ((SELECT COUNT(OrderID)
          FROM Orders) / (SELECT COUNT(EmployeeID)
                          FROM Employees));
