@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 객체 : 속성, 기능이 있는 데이터
+
+    // 속성(property)
+    // 속성명 : 속성값
+    let a = 3; // number
+    let b = "hi"; //String
+    let c = {name: "son", age: 33, address: "seoul"};
+
+    console.log(a)
+    console.log(b)
+    console.log(c)
+
+    // 각 속성 탐색
+    console.log(c.name)
+    console.log(c.age)
+    console.log(c.address)
+
+    console.log(c["name"])
+    console.log(c['age'])
+    console.log(c[`address`])
+
+    // 연습: 객체 만들기
+    let d = {
+        email: "gmail",
+        location: "korea",
+        married: true,
+        score: 3.14
+    };
+
+    console.log(d.email) // "gmail"
+    console.log(d.location) // "korea"
+    console.log(d.married) // true
+    console.log(d.score) // 3.14
+
+    // 기능
+    let e = {
+        name: "lee",
+        age: 22,
+        // 값이 함수면 속성을 메소들고 함
+        info: function a() {
+            console.log("this is information");
+        }
+    };
+    console.log(e.name)
+    console.log(e.age)
+    console.log(e.info)
+
+    e.info()
+
+    let f = {
+        hello: function a() {
+            console.log("say hello")
+        },
+        greeting: () => console.log("say greeting"),
+        annyeong: () => console.log("say 안녕")
+    };
+    f.hello();
+    f.greeting();
+    f.annyeong();
+
+    //연습 : 메소드 있는 객체 만들기
+    let g = {
+        height: 100,
+        weight: 150,
+        jump: () => console.log("jump"),
+        run: () => console.log("run"),
+        work: () => console.log("work")
+    }
+
+    console.log(g.height) // 100
+    console.log(g.weight) // 150
+    g.jump()
+    g.run()
+    g.work()
+</script>
+</body>
+</html>
