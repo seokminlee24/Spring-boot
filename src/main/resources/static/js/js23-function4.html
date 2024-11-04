@@ -7,7 +7,7 @@
 <body>
 <script>
     let a = 3;
-    console.log(a)
+    console.log(a);
 
     let b = a;
     console.log(a, b);
@@ -29,6 +29,7 @@
     fun2();
     d();
 
+    //단축 명령어 안통함
     let fun3 = () => console.log("화살표 함수 코드들..");
     let e = fun3;
     fun3();
@@ -51,8 +52,7 @@
             console.log("fun6의 코드들...");
         }
 
-        console.log("fun5의 코드들..");
-
+        console.log("fun5의 코드들...");
         return fun6;
     }
 
@@ -62,7 +62,6 @@
     console.log("-----------------------------------")
     h(); // 출력결과?
     i(); // 출력결과?
-
     console.log("===================================")
 
     function fun7(a) {
@@ -71,11 +70,11 @@
     }
 
     function fun8() {
-        console.log("fun8 코드들...")
+        console.log("fun8의 코드들...");
     }
 
     function fun9() {
-        console.log("fun9 코드들..")
+        console.log("fun9의 코드들...");
     }
 
     fun7(fun8);
@@ -84,9 +83,8 @@
         console.log("fun10 코드들");
     });
     fun7(function () {
-        console.log("이름 없는 함수 코드들");
+        console.log("이름이 없는 함수 코드들")
     })
-
     fun7(() => console.log("애로우 펑션 코드들"));
 </script>
 </body>
