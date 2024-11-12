@@ -1,6 +1,7 @@
 package com.example.java.service;
 
 import com.example.java.dto.a6.Customer;
+import com.example.java.dto.a6.Supplier;
 import com.example.java.mapper.CustomerMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -15,5 +16,10 @@ public class CustomerService {
 
     public Customer getCustomer(Integer customerId) {
         return mapper.selectById(customerId);
+    }
+
+    public Supplier getSupplier(Integer supplierId) {
+
+        return mapper.selectSupplierById(supplierId);
     }
 }
