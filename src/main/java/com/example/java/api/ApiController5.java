@@ -1,17 +1,60 @@
 package com.example.java.api;
 
 import com.example.java.dto.a5.Book;
+import com.example.java.dto.a5.Company;
+import com.example.java.dto.a5.Member;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 @Controller
 @RequestMapping("/api/main5")
 public class ApiController5 {
+    @GetMapping("sub10")
+    @ResponseBody
+    public List<Book> sub10() {
+        Book book1 = new Book();
+        book1.setTitle("Book 1");
+        book1.setAuthor("Author 1");
+        book1.setContent("Content 1");
+        book1.setPrice(3000);
+
+        Book book2 = new Book();
+        book2.setTitle("Book 2");
+        book2.setAuthor("Author 2");
+        book2.setContent("Content 2");
+        book2.setPrice(4000);
+
+        Book book3 = new Book();
+        book3.setTitle("Book 3");
+        book3.setAuthor("Author 3");
+        book3.setContent("Content 3");
+        book3.setPrice(5000);
+
+        return List.of(book1, book2, book3);
+    }
+
+    @GetMapping("sub9")
+    @ResponseBody
+    public Member sub9() {
+
+        Company company = new Company();
+        company.setName("토트넘");
+        company.setLocation("런던");
+
+        Member member = new Member();
+        member.setName("흥민");
+        member.setAddress("서울");
+        member.setMarried(true);
+        member.setCompany(company);
+        member.setItems(List.of("공", "신발", "유니폼"));
+        return member;
+    }
 
     @GetMapping("sub8")
     @ResponseBody
@@ -28,9 +71,10 @@ public class ApiController5 {
     @GetMapping("sub7")
     @ResponseBody
     public Map<String, Object> sub7() {
+
         return Map.of("product", Map.of("name", "컴퓨터",
-                        "price", "1000",
-                        "quantity", "1"),
+                        "price", 500,
+                        "quantity", 10),
                 "company", Map.of("location", List.of("서울", "부산")));
     }
 
@@ -58,7 +102,7 @@ public class ApiController5 {
     @GetMapping("sub3")
     @ResponseBody
     public String method3() {
-        System.out.println("ApiController5.method3");
+
         return "seoul";
     }
 
