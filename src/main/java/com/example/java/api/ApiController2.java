@@ -3,6 +3,7 @@ package com.example.java.api;
 import com.example.java.dto.a1.Book;
 import com.example.java.dto.a1.Person;
 import com.example.java.dto.a1.Player;
+import com.example.java.dto.a1.Product;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,6 +13,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 @RequestMapping("/api/main2")
 public class ApiController2 {
+    @PostMapping("sub4")
+    public void sub4(@RequestBody Product product) {
+        System.out.println(product);
+    }
 
     @PostMapping("sub3")
     public void sub3(@RequestBody Player player) {
