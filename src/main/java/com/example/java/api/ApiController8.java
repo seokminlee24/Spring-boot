@@ -3,10 +3,7 @@ package com.example.java.api;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.FileOutputStream;
-import java.io.InputStream;
+import java.io.*;
 
 @RestController
 @RequestMapping("/api/main8")
@@ -48,9 +45,10 @@ public class ApiController8 {
 
     @PostMapping("sub2")
     public void method2(@RequestParam String title,
-                        @RequestParam MultipartFile attached) {
+                        @RequestParam MultipartFile attached) throws IOException {
         System.out.println("title = " + title);
         System.out.println("attached = " + attached.getOriginalFilename());
 
+        attached.transferTo(new File("C:/Temp/" + attached.getOriginalFilename()));
     }
 }
