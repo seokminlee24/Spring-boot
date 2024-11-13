@@ -45,4 +45,12 @@ public class ApiController8 {
             throw new RuntimeException(e);
         }
     }
+
+    @PostMapping("sub2")
+    public void method2(@RequestParam String title,
+                        @RequestParam MultipartFile attached) {
+        System.out.println("title = " + title);
+        System.out.println("attached = " + attached.getOriginalFilename());
+
+    }
 }
